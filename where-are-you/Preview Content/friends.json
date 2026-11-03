@@ -1,0 +1,95 @@
+{
+  "friends": [
+    {
+      "id": "QW345DVJjdfe",
+      "display_name": "Olivia Bennett",
+      "avatar": { "emoji": null, "color": "orange" },
+      "location": {
+        "latitude": 34.052235,
+        "longitude": -118.243683,
+        "horizontal_accuracy": 12,
+        "is_approximate": false,
+        "updated_minutes_ago": 5
+      }
+    },
+    {
+      "id": "LSDLVJH234785",
+      "display_name": "Ethan Carter",
+      "avatar": { "emoji": "🏀", "color": "blue" },
+      "key_status": "changed",
+      "location": {
+        "latitude": 40.712776,
+        "longitude": -74.005974,
+        "horizontal_accuracy": 25,
+        "is_approximate": false,
+        "updated_minutes_ago": 42
+      }
+    },
+    {
+      "id": "3247DSVR324",
+      "display_name": "Maya Thompson",
+      "avatar": { "emoji": null, "color": "purple" },
+      "location": {
+        "latitude": 48.856613,
+        "longitude": 2.352222,
+        "horizontal_accuracy": 8,
+        "is_approximate": false,
+        "updated_minutes_ago": 3
+      }
+    },
+    {
+      "id": "PWEIR234235235",
+      "display_name": "Liam Rodriguez",
+      "avatar": { "emoji": "🎸", "color": "green" },
+      "location": {
+        "latitude": 35.689487,
+        "longitude": 139.691711,
+        "horizontal_accuracy": 15,
+        "is_approximate": false,
+        "updated_minutes_ago": 12
+      }
+    },
+    {
+      "id": "8234800DFLEV2345",
+      "display_name": "Sophia Nguyen",
+      "avatar": { "emoji": null, "color": "pink" },
+      "location": {
+        "latitude": 34.693738,
+        "longitude": 135.502165,
+        "horizontal_accuracy": 3000,
+        "is_approximate": true,
+        "updated_minutes_ago": 25
+      }
+    },
+    {
+      "id": "798237498DFBRE34",
+      "display_name": "Aria Kim",
+      "avatar": { "emoji": "🌸", "color": "mint" },
+      "location": {
+        "latitude": 37.566535,
+        "longitude": 126.977969,
+        "horizontal_accuracy": 20,
+        "is_approximate": false,
+        "updated_minutes_ago": 95
+      }
+    },
+    {
+      "id": "0234870928374787",
+      "display_name": "Noah Sullivan",
+      "avatar": { "emoji": null, "color": "teal" },
+      "location": {
+        "latitude": 64.146582,
+        "longitude": -21.942635,
+        "horizontal_accuracy": 10,
+        "is_approximate": false,
+        "updated_minutes_ago": 8
+      }
+    },
+    {
+      "id": "808080283409JLHSJB",
+      "display_name": "Brett Cooper",
+      "avatar": { "emoji": null, "color": "indigo" },
+      "location": null
+    }
+  ]
+}
