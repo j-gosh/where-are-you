@@ -1,6 +1,0 @@
-framework module Pods_where_are_youTests {
-  umbrella header "Pods-where-are-youTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
