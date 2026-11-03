@@ -1,0 +1,174 @@
+rules_version = '2';
+
+// Security model: names, locations and alert details are end-to-end encrypted (SealedBox
+// maps), so these rules only decide who may store or read ciphertext, and check its shape.
+// Anything that must change several documents atomically (accepting invites, unfriending,
+// deleting accounts) goes through Cloud Functions instead.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isUser(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // Friendship documents are keyed by both uids, lowest first.
+    function friendshipId(a, b) {
+      return a < b ? a + '_' + b : b + '_' + a;
+    }
+
+    function areFriends(a, b) {
+      return a != b && exists(/databases/$(database)/documents/friendships/$(friendshipId(a, b)));
+    }
+
+    // Matches WAYCore.SealedBox (version 1). Key IDs are 22 base64url characters,
+    // encapsulated keys are X25519 public keys.
+    function isSealedBox(box) {
+      return box is map
+        && box.keys().hasOnly(['version', 'senderKeyId', 'recipientKeyId', 'encapsulatedKey', 'ciphertext'])
+        && box.keys().hasAll(['version', 'senderKeyId', 'recipientKeyId', 'encapsulatedKey', 'ciphertext'])
+        && box.version == 1
+        && box.senderKeyId is string && box.senderKeyId.size() == 22
+        && box.recipientKeyId is string && box.recipientKeyId.size() == 22
+        && box.encapsulatedKey is bytes && box.encapsulatedKey.size() == 32
+        && box.ciphertext is bytes && box.ciphertext.size() <= 4096;
+    }
+
+    function onlyFields(allowed) {
+      return request.resource.data.keys().hasOnly(allowed);
+    }
+
+    function stampedNow(field) {
+      return request.resource.data[field] == request.time;
+    }
+
+    // Public keys. Readable one at a time by any signed-in user (needed to encrypt for a
+    // friend or check an invite), but not listable, so nobody can enumerate users.
+    match /users/{uid} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create, update: if isUser(uid)
+        && onlyFields(['publicKey', 'keyId', 'updatedAt'])
+        && request.resource.data.publicKey is bytes
+        && request.resource.data.publicKey.size() == 32
+        && request.resource.data.keyId is string
+        && request.resource.data.keyId.size() == 22
+        && stampedNow('updatedAt');
+      // Only the deleteAccount function removes users.
+      allow delete: if false;
+
+      // The user's own profile, sealed to their own key so their other devices can read it.
+      match /private/profile {
+        allow read, delete: if isUser(uid);
+        allow create, update: if isUser(uid)
+          && onlyFields(['box', 'updatedAt'])
+          && isSealedBox(request.resource.data.box)
+          && stampedNow('updatedAt');
+      }
+
+      // Alert preferences. The notification function reads receiveAlerts and
+      // mutedAlertSenders; the user's own devices enforce the rest.
+      match /private/prefs {
+        allow read, delete: if isUser(uid);
+        allow create, update: if isUser(uid)
+          && onlyFields(['receiveAlerts', 'mutedAlertSenders', 'allowAlertsOnMe', 'blockedAlertRequesters', 'updatedAt'])
+          && request.resource.data.receiveAlerts is bool
+          && request.resource.data.mutedAlertSenders is list
+          && request.resource.data.mutedAlertSenders.size() <= 100
+          && request.resource.data.allowAlertsOnMe is bool
+          && request.resource.data.blockedAlertRequesters is list
+          && request.resource.data.blockedAlertRequesters.size() <= 100
+          && stampedNow('updatedAt');
+      }
+
+      // Who the user shares their location with, and from which of their devices.
+      match /private/sharing {
+        allow read, delete: if isUser(uid);
+        allow create, update: if isUser(uid)
+          && onlyFields(['isEnabled', 'friendUIDs', 'activeDeviceId', 'updatedAt'])
+          && request.resource.data.isEnabled is bool
+          && request.resource.data.friendUIDs is list
+          && request.resource.data.friendUIDs.size() <= 100
+          && (request.resource.data.activeDeviceId == null || request.resource.data.activeDeviceId is string)
+          && stampedNow('updatedAt');
+      }
+
+      match /devices/{deviceId} {
+        allow read, delete: if isUser(uid);
+        allow create, update: if isUser(uid)
+          && onlyFields(['fcmToken', 'updatedAt'])
+          && request.resource.data.fcmToken is string
+          && request.resource.data.fcmToken.size() <= 4096
+          && stampedNow('updatedAt');
+      }
+    }
+
+    // Invites are fetched by token (which only the people in the Messages conversation know)
+    // and accepted through the acceptInvite function.
+    match /invites/{token} {
+      allow get: if signedIn();
+      allow list, update: if false;
+      allow create: if signedIn()
+        && token.size() == 43
+        && onlyFields(['inviterUid', 'inviterKeyId', 'createdAt', 'expiresAt'])
+        && request.resource.data.inviterUid == request.auth.uid
+        && request.resource.data.inviterKeyId is string
+        && request.resource.data.inviterKeyId.size() == 22
+        && stampedNow('createdAt')
+        && request.resource.data.expiresAt is timestamp
+        && request.resource.data.expiresAt > request.time
+        && request.resource.data.expiresAt <= request.time + duration.value(7, 'd');
+      allow delete: if signedIn() && resource.data.inviterUid == request.auth.uid;
+    }
+
+    // Created and deleted only by functions.
+    match /friendships/{friendshipId} {
+      allow read: if signedIn() && request.auth.uid in resource.data.members;
+      allow write: if false;
+    }
+
+    // What a sender shares with one friend: profile and location, each sealed for that friend.
+    match /inboxes/{recipientUid}/shares/{senderUid} {
+      allow read, delete: if isUser(recipientUid) || isUser(senderUid);
+      allow create, update: if isUser(senderUid)
+        && areFriends(senderUid, recipientUid)
+        && onlyFields(['profile', 'location', 'isSharingLocation', 'updatedAt'])
+        && isSealedBox(request.resource.data.profile)
+        && (request.resource.data.location == null || isSealedBox(request.resource.data.location))
+        && request.resource.data.isSharingLocation is bool
+        && stampedNow('updatedAt');
+    }
+
+    // "Notify me when you arrive at/leave a place", stored in the watched person's inbox.
+    match /inboxes/{targetUid}/alertRequests/{alertId} {
+      allow read, delete: if isUser(targetUid)
+        || (signedIn() && resource.data.requesterUid == request.auth.uid);
+      allow update: if false;
+      allow create: if signedIn()
+        && areFriends(request.auth.uid, targetUid)
+        && alertId.size() <= 64
+        && onlyFields(['requesterUid', 'payload', 'requesterCopy', 'createdAt'])
+        && request.resource.data.requesterUid == request.auth.uid
+        && isSealedBox(request.resource.data.payload)
+        && isSealedBox(request.resource.data.requesterCopy)
+        && stampedNow('createdAt');
+    }
+
+    // Write-only queue consumed (and deleted) by the notification function.
+    match /notificationEvents/{eventId} {
+      allow read, update, delete: if false;
+      allow create: if signedIn()
+        && onlyFields(['fromUid', 'toUid', 'payload', 'createdAt', 'expiresAt'])
+        && request.resource.data.fromUid == request.auth.uid
+        && request.resource.data.toUid is string
+        && areFriends(request.auth.uid, request.resource.data.toUid)
+        && isSealedBox(request.resource.data.payload)
+        && stampedNow('createdAt')
+        && request.resource.data.expiresAt is timestamp
+        && request.resource.data.expiresAt <= request.time + duration.value(1, 'd');
+    }
+  }
+}
