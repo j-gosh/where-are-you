@@ -1,0 +1,32 @@
+// Project-wide build settings shared by every target.
+//
+// To build on a device, or to use your own bundle IDs, copy
+// Local.xcconfig.example to Local.xcconfig (gitignored) and set your values
+// there. Don't set DEVELOPMENT_TEAM in Xcode's Signing tab: Xcode writes it
+// into project.pbxproj, which is tracked.
+
+// Reverse-DNS prefix for every bundle ID in the project.
+BUNDLE_ID_PREFIX = com.morgana
+
+// Apple Developer team used for signing. Empty is fine for simulator builds.
+DEVELOPMENT_TEAM =
+
+// Where invite bubbles link to when opened outside Messages (e.g. on a Mac). The invite itself
+// rides in the URL fragment, which never reaches this server. ($() keeps "//" from starting a comment.)
+INVITE_LANDING_URL = https:/$()/github.com/ItsYaBoyJG/where-are-you
+
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
+SWIFT_VERSION = 6.0
+
+#include? "Local.xcconfig"
+
+// Derived values. After the include, so they pick up local overrides.
+
+// Shared by the app and its extensions so they see the same identity key and Firebase sign-in.
+KEYCHAIN_ACCESS_GROUP = $(AppIdentifierPrefix)$(BUNDLE_ID_PREFIX).where-are-you.shared
+
+APP_ATTEST_ENVIRONMENT = production
+APP_ATTEST_ENVIRONMENT[config=Debug] = development
+
+APS_ENVIRONMENT = production
+APS_ENVIRONMENT[config=Debug] = development

@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A211D09926D9D2C76604097 /* Pods_where_are_you_where_are_youUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B012010F256138B92F9D4971 /* Pods_where_are_you_where_are_youUITests.framework */; };
-		9B0453A93FAD3A1A39B0584A /* Pods_where_are_youTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1058FEB66BF179AA9D7D7F8 /* Pods_where_are_youTests.framework */; };
-		CB6196797A02CD2307556983 /* Pods_where_are_you.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688B8E56EABBC5670AE3E603 /* Pods_where_are_you.framework */; };
+		C0F160000000000000000B03 /* WAYCore in Frameworks */ = {isa = PBXBuildFile; productRef = C0F160000000000000000B02 /* WAYCore */; };
+		C0F160000000000000000B06 /* WAYFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = C0F160000000000000000B05 /* WAYFirebase */; };
+		C0F160000000000000000C0A /* WAYCore in Frameworks */ = {isa = PBXBuildFile; productRef = C0F160000000000000000C0B /* WAYCore */; };
+		C0F160000000000000000C0C /* WAYFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = C0F160000000000000000C0D /* WAYFirebase */; };
+		C0F160000000000000000C0E /* WhereAreYouMessages.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C0F160000000000000000C01 /* WhereAreYouMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C0F160000000000000000D0A /* WAYCore in Frameworks */ = {isa = PBXBuildFile; productRef = C0F160000000000000000D0B /* WAYCore */; };
+		C0F160000000000000000D0E /* WhereAreYouNotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C0F160000000000000000D01 /* WhereAreYouNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,21 +31,44 @@
 			remoteGlobalIDString = B3D031602DD4ED01000CDDC1;
 			remoteInfo = "where-are-you";
 		};
+		C0F160000000000000000C10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D031592DD4ED01000CDDC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0F160000000000000000C03;
+			remoteInfo = WhereAreYouMessages;
+		};
+		C0F160000000000000000D10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D031592DD4ED01000CDDC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0F160000000000000000D03;
+			remoteInfo = WhereAreYouNotificationService;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C0F160000000000000000C0F /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C0F160000000000000000C0E /* WhereAreYouMessages.appex in Embed Foundation Extensions */,
+				C0F160000000000000000D0E /* WhereAreYouNotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		20DF6891AA1E8B4EB170E22A /* Pods-where-are-youTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-youTests.release.xcconfig"; path = "Target Support Files/Pods-where-are-youTests/Pods-where-are-youTests.release.xcconfig"; sourceTree = "<group>"; };
-		688B8E56EABBC5670AE3E603 /* Pods_where_are_you.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_where_are_you.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DB45F5E7A14E560BE2040B3 /* Pods-where-are-you-where-are-youUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-you-where-are-youUITests.release.xcconfig"; path = "Target Support Files/Pods-where-are-you-where-are-youUITests/Pods-where-are-you-where-are-youUITests.release.xcconfig"; sourceTree = "<group>"; };
-		828A116DDF4ABEA50F836A1E /* Pods-where-are-you.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-you.release.xcconfig"; path = "Target Support Files/Pods-where-are-you/Pods-where-are-you.release.xcconfig"; sourceTree = "<group>"; };
-		9794F22DD87A22A556A491A0 /* Pods-where-are-you-where-are-youUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-you-where-are-youUITests.debug.xcconfig"; path = "Target Support Files/Pods-where-are-you-where-are-youUITests/Pods-where-are-you-where-are-youUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		ACDCA2C18E2DA3F80BBD4703 /* Pods-where-are-you.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-you.debug.xcconfig"; path = "Target Support Files/Pods-where-are-you/Pods-where-are-you.debug.xcconfig"; sourceTree = "<group>"; };
-		B012010F256138B92F9D4971 /* Pods_where_are_you_where_are_youUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_where_are_you_where_are_youUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1058FEB66BF179AA9D7D7F8 /* Pods_where_are_youTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_where_are_youTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D031612DD4ED01000CDDC1 /* where-are-you.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "where-are-you.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D0316E2DD4ED04000CDDC1 /* where-are-youTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "where-are-youTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D031782DD4ED04000CDDC1 /* where-are-youUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "where-are-youUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5EE1C4A8619D1C4A2F37504 /* Pods-where-are-youTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-where-are-youTests.debug.xcconfig"; path = "Target Support Files/Pods-where-are-youTests/Pods-where-are-youTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0F160000000000000000A02 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		C0F160000000000000000C01 /* WhereAreYouMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhereAreYouMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0F160000000000000000D01 /* WhereAreYouNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhereAreYouNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +87,21 @@
 			path = "where-are-youUITests";
 			sourceTree = "<group>";
 		};
+		C0F160000000000000000C02 /* WhereAreYouMessages */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WhereAreYouMessages;
+			sourceTree = "<group>";
+		};
+		C0F160000000000000000C12 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C0F160000000000000000D02 /* WhereAreYouNotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WhereAreYouNotificationService;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6196797A02CD2307556983 /* Pods_where_are_you.framework in Frameworks */,
+				C0F160000000000000000B03 /* WAYCore in Frameworks */,
+				C0F160000000000000000B06 /* WAYFirebase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B0453A93FAD3A1A39B0584A /* Pods_where_are_youTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +125,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A211D09926D9D2C76604097 /* Pods_where_are_you_where_are_youUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F160000000000000000C05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F160000000000000000C0A /* WAYCore in Frameworks */,
+				C0F160000000000000000C0C /* WAYFirebase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F160000000000000000D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F160000000000000000D0A /* WAYCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,12 +151,14 @@
 		B3D031582DD4ED01000CDDC1 = {
 			isa = PBXGroup;
 			children = (
+				C0F160000000000000000A01 /* Config */,
 				B3D031632DD4ED01000CDDC1 /* where-are-you */,
+				C0F160000000000000000C02 /* WhereAreYouMessages */,
+				C0F160000000000000000D02 /* WhereAreYouNotificationService */,
+				C0F160000000000000000C12 /* Shared */,
 				B3D031712DD4ED04000CDDC1 /* where-are-youTests */,
 				B3D0317B2DD4ED04000CDDC1 /* where-are-youUITests */,
 				B3D031622DD4ED01000CDDC1 /* Products */,
-				F37883F102AF4FECED1F3893 /* Pods */,
-				F002D2AA090AA2702B3CC69F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,31 +168,18 @@
 				B3D031612DD4ED01000CDDC1 /* where-are-you.app */,
 				B3D0316E2DD4ED04000CDDC1 /* where-are-youTests.xctest */,
 				B3D031782DD4ED04000CDDC1 /* where-are-youUITests.xctest */,
+				C0F160000000000000000C01 /* WhereAreYouMessages.appex */,
+				C0F160000000000000000D01 /* WhereAreYouNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F002D2AA090AA2702B3CC69F /* Frameworks */ = {
+		C0F160000000000000000A01 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				688B8E56EABBC5670AE3E603 /* Pods_where_are_you.framework */,
-				B012010F256138B92F9D4971 /* Pods_where_are_you_where_are_youUITests.framework */,
-				B1058FEB66BF179AA9D7D7F8 /* Pods_where_are_youTests.framework */,
+				C0F160000000000000000A02 /* Shared.xcconfig */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F37883F102AF4FECED1F3893 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ACDCA2C18E2DA3F80BBD4703 /* Pods-where-are-you.debug.xcconfig */,
-				828A116DDF4ABEA50F836A1E /* Pods-where-are-you.release.xcconfig */,
-				9794F22DD87A22A556A491A0 /* Pods-where-are-you-where-are-youUITests.debug.xcconfig */,
-				6DB45F5E7A14E560BE2040B3 /* Pods-where-are-you-where-are-youUITests.release.xcconfig */,
-				D5EE1C4A8619D1C4A2F37504 /* Pods-where-are-youTests.debug.xcconfig */,
-				20DF6891AA1E8B4EB170E22A /* Pods-where-are-youTests.release.xcconfig */,
-			);
-			path = Pods;
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,20 +189,26 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3D031822DD4ED04000CDDC1 /* Build configuration list for PBXNativeTarget "where-are-you" */;
 			buildPhases = (
-				25BAE6D1E73F64BCF5F60894 /* [CP] Check Pods Manifest.lock */,
 				B3D0315D2DD4ED01000CDDC1 /* Sources */,
 				B3D0315E2DD4ED01000CDDC1 /* Frameworks */,
 				B3D0315F2DD4ED01000CDDC1 /* Resources */,
-				51AE19917E1485BFAE1658EB /* [CP] Embed Pods Frameworks */,
+				C0F160000000000000000C0F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0F160000000000000000C11 /* PBXTargetDependency */,
+				C0F160000000000000000D11 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B3D031632DD4ED01000CDDC1 /* where-are-you */,
+				C0F160000000000000000C12 /* Shared */,
 			);
 			name = "where-are-you";
+			packageProductDependencies = (
+				C0F160000000000000000B02 /* WAYCore */,
+				C0F160000000000000000B05 /* WAYFirebase */,
+			);
 			productName = "where-are-you";
 			productReference = B3D031612DD4ED01000CDDC1 /* where-are-you.app */;
 			productType = "com.apple.product-type.application";
@@ -164,7 +217,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3D031852DD4ED04000CDDC1 /* Build configuration list for PBXNativeTarget "where-are-youTests" */;
 			buildPhases = (
-				1FD4819859B29F3CD7A46B20 /* [CP] Check Pods Manifest.lock */,
 				B3D0316A2DD4ED04000CDDC1 /* Sources */,
 				B3D0316B2DD4ED04000CDDC1 /* Frameworks */,
 				B3D0316C2DD4ED04000CDDC1 /* Resources */,
@@ -186,11 +238,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3D031882DD4ED04000CDDC1 /* Build configuration list for PBXNativeTarget "where-are-youUITests" */;
 			buildPhases = (
-				66BE85050482E725EB0DFA70 /* [CP] Check Pods Manifest.lock */,
 				B3D031742DD4ED04000CDDC1 /* Sources */,
 				B3D031752DD4ED04000CDDC1 /* Frameworks */,
 				B3D031762DD4ED04000CDDC1 /* Resources */,
-				9A52961D99D21C0AA460D55F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +254,54 @@
 			productName = "where-are-youUITests";
 			productReference = B3D031782DD4ED04000CDDC1 /* where-are-youUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C0F160000000000000000C03 /* WhereAreYouMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0F160000000000000000C07 /* Build configuration list for PBXNativeTarget "WhereAreYouMessages" */;
+			buildPhases = (
+				C0F160000000000000000C04 /* Sources */,
+				C0F160000000000000000C05 /* Frameworks */,
+				C0F160000000000000000C06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0F160000000000000000C02 /* WhereAreYouMessages */,
+				C0F160000000000000000C12 /* Shared */,
+			);
+			name = WhereAreYouMessages;
+			packageProductDependencies = (
+				C0F160000000000000000C0B /* WAYCore */,
+				C0F160000000000000000C0D /* WAYFirebase */,
+			);
+			productName = WhereAreYouMessages;
+			productReference = C0F160000000000000000C01 /* WhereAreYouMessages.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+		C0F160000000000000000D03 /* WhereAreYouNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0F160000000000000000D07 /* Build configuration list for PBXNativeTarget "WhereAreYouNotificationService" */;
+			buildPhases = (
+				C0F160000000000000000D04 /* Sources */,
+				C0F160000000000000000D05 /* Frameworks */,
+				C0F160000000000000000D06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C0F160000000000000000D02 /* WhereAreYouNotificationService */,
+			);
+			name = WhereAreYouNotificationService;
+			packageProductDependencies = (
+				C0F160000000000000000D0B /* WAYCore */,
+			);
+			productName = WhereAreYouNotificationService;
+			productReference = C0F160000000000000000D01 /* WhereAreYouNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -226,6 +324,12 @@
 						CreatedOnToolsVersion = 16.3;
 						TestTargetID = B3D031602DD4ED01000CDDC1;
 					};
+					C0F160000000000000000C03 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					C0F160000000000000000D03 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 				};
 			};
 			buildConfigurationList = B3D0315C2DD4ED01000CDDC1 /* Build configuration list for PBXProject "where-are-you" */;
@@ -237,6 +341,10 @@
 			);
 			mainGroup = B3D031582DD4ED01000CDDC1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C0F160000000000000000B01 /* XCLocalSwiftPackageReference "Packages/WhereAreYouKit" */,
+				C0F160000000000000000B04 /* XCLocalSwiftPackageReference "Packages/WhereAreYouFirebase" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B3D031622DD4ED01000CDDC1 /* Products */;
 			projectDirPath = "";
@@ -245,6 +353,8 @@
 				B3D031602DD4ED01000CDDC1 /* where-are-you */,
 				B3D0316D2DD4ED04000CDDC1 /* where-are-youTests */,
 				B3D031772DD4ED04000CDDC1 /* where-are-youUITests */,
+				C0F160000000000000000C03 /* WhereAreYouMessages */,
+				C0F160000000000000000D03 /* WhereAreYouNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -271,118 +381,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0F160000000000000000C06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F160000000000000000D06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1FD4819859B29F3CD7A46B20 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-where-are-youTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		25BAE6D1E73F64BCF5F60894 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-where-are-you-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51AE19917E1485BFAE1658EB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-where-are-you/Pods-where-are-you-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-where-are-you/Pods-where-are-you-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-where-are-you/Pods-where-are-you-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		66BE85050482E725EB0DFA70 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-where-are-you-where-are-youUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9A52961D99D21C0AA460D55F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-where-are-you-where-are-youUITests/Pods-where-are-you-where-are-youUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-where-are-you-where-are-youUITests/Pods-where-are-you-where-are-youUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-where-are-you-where-are-youUITests/Pods-where-are-you-where-are-youUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B3D0315D2DD4ED01000CDDC1 /* Sources */ = {
@@ -406,6 +419,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C0F160000000000000000C04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F160000000000000000D04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -419,11 +446,22 @@
 			target = B3D031602DD4ED01000CDDC1 /* where-are-you */;
 			targetProxy = B3D031792DD4ED04000CDDC1 /* PBXContainerItemProxy */;
 		};
+		C0F160000000000000000C11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0F160000000000000000C03 /* WhereAreYouMessages */;
+			targetProxy = C0F160000000000000000C10 /* PBXContainerItemProxy */;
+		};
+		C0F160000000000000000D11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0F160000000000000000D03 /* WhereAreYouNotificationService */;
+			targetProxy = C0F160000000000000000D10 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B3D031802DD4ED04000CDDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F160000000000000000A02 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -457,7 +495,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -475,7 +512,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -488,6 +524,7 @@
 		};
 		B3D031812DD4ED04000CDDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0F160000000000000000A02 /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -521,7 +558,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -533,7 +569,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -545,81 +580,79 @@
 		};
 		B3D031832DD4ED04000CDDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACDCA2C18E2DA3F80BBD4703 /* Pods-where-are-you.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Config/where-are-you.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
+				DEVELOPMENT_ASSET_PATHS = "\"where-are-you/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Choose “Always” so the friends you share with keep seeing your location, and their arrive/leave alerts work, when Where Are You is closed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Where Are You shows your location on the map and shares it, end-to-end encrypted, only with the friends you choose.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-you";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		B3D031842DD4ED04000CDDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828A116DDF4ABEA50F836A1E /* Pods-where-are-you.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Config/where-are-you.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
+				DEVELOPMENT_ASSET_PATHS = "\"where-are-you/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_FILE = "Config/App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Choose “Always” so the friends you share with keep seeing your location, and their arrive/leave alerts work, when Where Are You is closed.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Where Are You shows your location on the map and shares it, end-to-end encrypted, only with the friends you choose.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-you";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		B3D031862DD4ED04000CDDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5EE1C4A8619D1C4A2F37504 /* Pods-where-are-youTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-youTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-youTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/where-are-you.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/where-are-you";
 			};
@@ -627,19 +660,15 @@
 		};
 		B3D031872DD4ED04000CDDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20DF6891AA1E8B4EB170E22A /* Pods-where-are-youTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-youTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-youTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/where-are-you.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/where-are-you";
 			};
@@ -647,17 +676,14 @@
 		};
 		B3D031892DD4ED04000CDDC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9794F22DD87A22A556A491A0 /* Pods-where-are-you-where-are-youUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-youUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-youUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "where-are-you";
 			};
@@ -665,19 +691,108 @@
 		};
 		B3D0318A2DD4ED04000CDDC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DB45F5E7A14E560BE2040B3 /* Pods-where-are-you-where-are-youUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RQCJWTN9AX;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.morgana.where-are-youUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-youUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "where-are-you";
+			};
+			name = Release;
+		};
+		C0F160000000000000000C08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/WhereAreYouMessages.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Messages-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you.messages";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0F160000000000000000C09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/WhereAreYouMessages.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/Messages-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you.messages";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C0F160000000000000000D08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/WhereAreYouNotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/NotificationService-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You Notifications";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you.notifications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C0F160000000000000000D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Config/WhereAreYouNotificationService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/NotificationService-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Where Are You Notifications";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_ID_PREFIX).where-are-you.notifications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -720,7 +835,59 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C0F160000000000000000C07 /* Build configuration list for PBXNativeTarget "WhereAreYouMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F160000000000000000C08 /* Debug */,
+				C0F160000000000000000C09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0F160000000000000000D07 /* Build configuration list for PBXNativeTarget "WhereAreYouNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0F160000000000000000D08 /* Debug */,
+				C0F160000000000000000D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C0F160000000000000000B01 /* XCLocalSwiftPackageReference "Packages/WhereAreYouKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/WhereAreYouKit;
+		};
+		C0F160000000000000000B04 /* XCLocalSwiftPackageReference "Packages/WhereAreYouFirebase" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/WhereAreYouFirebase;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0F160000000000000000B02 /* WAYCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WAYCore;
+		};
+		C0F160000000000000000B05 /* WAYFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WAYFirebase;
+		};
+		C0F160000000000000000C0B /* WAYCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WAYCore;
+		};
+		C0F160000000000000000C0D /* WAYFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WAYFirebase;
+		};
+		C0F160000000000000000D0B /* WAYCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WAYCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B3D031592DD4ED01000CDDC1 /* Project object */;
 }

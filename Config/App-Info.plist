@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Merged into the generated Info.plist. Only keys that INFOPLIST_KEY_* build settings can't express. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- whereareyou://invite#… opens the app with an invite (see Shared/InviteMessage.swift). -->
+				<string>whereareyou</string>
+			</array>
+		</dict>
+	</array>
+	<!-- Significant-change location updates and background refresh, for sharing while closed. -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
+	<!-- Must match SharingService.refreshTaskIdentifier. -->
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER).heartbeat</string>
+	</array>
+	<!-- The app hands FCM its APNs token itself (AppDelegate → PushService). -->
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>WAYKeychainAccessGroup</key>
+	<string>$(KEYCHAIN_ACCESS_GROUP)</string>
+	<key>WAYInviteLandingURL</key>
+	<string>$(INVITE_LANDING_URL)</string>
+</dict>
+</plist>

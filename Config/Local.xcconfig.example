@@ -1,0 +1,7 @@
+// Copy this file to Local.xcconfig (gitignored) and fill in your values.
+
+// Your Apple Developer team ID (Xcode > Settings > Accounts, or developer.apple.com > Membership).
+DEVELOPMENT_TEAM = ABCDE12345
+
+// Bundle IDs must be unique to your team, so forks need their own prefix.
+BUNDLE_ID_PREFIX = com.example
