@@ -6,7 +6,7 @@
 // into project.pbxproj, which is tracked.
 
 // Reverse-DNS prefix for every bundle ID in the project.
-BUNDLE_ID_PREFIX = com.morgana
+BUNDLE_ID_PREFIX = 
 
 // Apple Developer team used for signing. Empty is fine for simulator builds.
 DEVELOPMENT_TEAM =
