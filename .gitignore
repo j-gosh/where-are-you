@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+*.xcresult
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods (no longer used)
+Pods/
+
+# Per-developer signing and bundle ID overrides (see Config/Local.xcconfig.example)
+Config/Local.xcconfig
+
+# Firebase app config: every fork uses its own Firebase project
+GoogleService-Info.plist
+
+# Node / Firebase CLI
+node_modules/
+firebase/functions/lib/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# Pins for local packages live in the Xcode project's Package.resolved
+Packages/*/Package.resolved
